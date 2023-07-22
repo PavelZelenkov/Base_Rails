@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 3.1.2
 
 * System dependencies
 
@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Сущности (классы) - Пользователь и его права доступа, Создание тестов - Вопрос/Ответ, Выбор и выполнение теста, Сохранение результата и публикация.
