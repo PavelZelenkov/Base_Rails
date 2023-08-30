@@ -37,10 +37,10 @@ questions = Question.create([
 ])
 
 answers = Answer.create([
-  {body: 'Ответ 1', correct: 1, question_id: questions.first.id},
-  {body: 'Ответ 2', correct: 1, question_id: questions[-5].id},
-  {body: 'Ответ 3', correct: 1, question_id: questions[-4].id},
-  {body: 'Ответ 4', correct: 1, question_id: questions[-3].id},
-  {body: 'Ответ 5', correct: 1, question_id: questions[-2].id},
-  {body: 'Ответ 6', correct: 1, question_id: questions.last.id}
+  {body: 'Ответ 1', correct: false, question_id: questions.first.id},
+  {body: 'Ответ 2', correct: false, question_id: questions[-5].id},
+  {body: 'Ответ 3', correct: true, question_id: questions[-4].id},
+  {body: 'Ответ 4', correct: false, question_id: questions[-3].id},
+  {body: 'Ответ 5', correct: true, question_id: questions[-2].id},
+  {body: 'Ответ 6', correct: false, question_id: questions.last.id}
 ])

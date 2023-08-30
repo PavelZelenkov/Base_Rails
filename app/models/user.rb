@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :tests, :through => :test_passages
 
   def ended_on_level(level)
-    tests.joins(:test_passages).where(tests: {level: level},
-    test_passages: {user_id: id})
+    tests.where(tests: {level: level}, test_passages: {user_id: id})
   end
 end
