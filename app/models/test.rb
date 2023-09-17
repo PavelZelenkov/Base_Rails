@@ -5,7 +5,13 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages
   belongs_to :author, class_name: 'User', foreign_key: :author_id
 
-  def self.test_with_category(category)
-    Test.joins(:category).where(categories: {title: category}).order(title: :desc).pluck(:title)
-  end
+  scope :easy, -> { where(level: 0..1) }
+  scope :normal, -> { where(level: 2..4) }
+  scope :heavy, -> { where(level: 5..Float::INFINITY) }
+
+  scope :level_selection, -> (level) { where(level: level) }
+
+  default_scope { order(title: :asc) }
+
+  scope :with_category, -> (category) { joins(:category).where(categories: {title: category}).pluck(:title) }
 end
