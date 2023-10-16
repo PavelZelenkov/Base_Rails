@@ -1,20 +1,19 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_test, only: %[index]
+  before_action :set_test, only: %i[index create]
+  before_action :set_the_question, only: %i[destroy show]
 
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_with_question_not_found
 
   def index
-    @questions = @tests.questions.all
+    @questions = @tests.questions
   end
 
   def destroy
-    @questions = Question.find(params[:id])
     @questions.destroy
   end
 
   def show
-    @questions = Question.find(params[:id])
     render inline: "<h1><%= @questions.body %></h1>"
   end
 
@@ -23,15 +22,22 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @tests = Test.find(params[:test_id])
-    @questions = @tests.questions.create(question_params)
-    redirect_to test_questions_path
+    @questions = @tests.questions.new(question_params)
+    if @questions.save
+      redirect_to test_questions_path
+    else
+      render plain: 'error creating question'
+    end
   end
 
   private
 
   def set_test
     @tests = Test.find(params[:test_id])
+  end
+
+  def set_the_question
+    @questions = Question.find(params[:id])
   end
   
   def question_params
