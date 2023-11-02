@@ -1,11 +1,16 @@
 <h1>All Tests</h1>
 
-<% a = 0 %>
+<p>
+  <%= link_to 'New test', new_test_path %>
+</p>
 
-<% @tests.each do |test| %>
-  <h2><%= test.title %></h2>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Level</th>
+    <th>Number of question</th>
+    <th colspan="3">Action</th>
+  </tr>
 
-  <p>
-  <%= "Level: #{test.level};" %>
-  </p>
-<% end %>
+  <%= render @tests %>
+</table>
