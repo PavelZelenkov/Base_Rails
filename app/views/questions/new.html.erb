@@ -1,4 +1,4 @@
-<h1>Create <%= question_header(@tests) %> New Questions</h1>
+<h1><%= question_header %></h1>
 
 <%= form_with(model:[@tests, @question]) do |form| %>
   <%= render 'shared/errors', resource: @question %>

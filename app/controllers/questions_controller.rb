@@ -1,13 +1,9 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_test, only: %i[index new create]
+  before_action :set_test, only: %i[new create]
   before_action :set_the_question, only: %i[destroy show edit update]
 
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_with_question_not_found
-
-  def index
-    @question = @tests.questions
-  end
 
   def destroy
     @question.destroy
