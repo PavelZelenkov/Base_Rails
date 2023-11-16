@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   validates :title, :email, presence: true
 
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
   def ended_on_level(level)
     tests.level_selection(level)
   end

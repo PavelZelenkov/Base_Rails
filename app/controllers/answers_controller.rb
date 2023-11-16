@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
     if @answer.update(answer_params)
       redirect_to @answer
     else
-      render :new
+      render :edit
     end
   end
 
