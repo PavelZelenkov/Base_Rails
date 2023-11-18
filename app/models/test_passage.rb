@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_and_next_question
 
+  SUCCES_RATE = 85
+
   def completed?
     current_question.nil?
   end
@@ -15,6 +17,14 @@ class TestPassage < ApplicationRecord
     end
 
     save!
+  end
+
+  def percentage_formula
+    ( correct_questions * 100 ) / test.question_ids.size
+  end
+  
+  def success?
+    percentage_formula >= SUCCES_RATE
   end
 
   private

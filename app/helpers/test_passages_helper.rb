@@ -1,9 +1,7 @@
 module TestPassagesHelper
 
-  SUCCES_RATE = 85
-  
   def color_result
-    if success?
+    if @test_passage.success?
       "color:#32CD32"
     else
       "color:#ff0000"
@@ -11,21 +9,11 @@ module TestPassagesHelper
   end
 
   def result_test
-    if success?
-      "Result: #{percentage_formula}% Successful completion of the test"
+    if @test_passage.success?
+      "Result: #{@test_passage.percentage_formula}% Successful completion of the test"
     else
-      "Result: #{percentage_formula}% Test failed"
+      "Result: #{@test_passage.percentage_formula}% Test failed"
     end
-  end
-
-  private
-
-  def percentage_formula
-    ( @test_passage.correct_questions * 100 ) / @test_passage.test.question_ids.size
-  end
-  
-  def success?
-    percentage_formula >= SUCCES_RATE
   end
 
 end
