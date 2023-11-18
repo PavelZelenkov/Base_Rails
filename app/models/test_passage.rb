@@ -3,13 +3,14 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_next_question, on: :update
+  before_validation :before_validation_set_first_and_next_question
+  
+  SUCCES_RATE = 85
 
   def completed?
     current_question.nil?
   end
-  
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -18,13 +19,37 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def color_result
+    if success? == true
+      "color:#32CD32"
+    else
+      "color:#ff0000"
+    end
+  end
+
+  def result_test
+    if success? == true
+      "Result: #{percentage_formula}% Successful completion of the test"
+    else
+      "Result: #{percentage_formula}% Test failed"
+    end
+  end
+
   private
 
-  def before_validation_set_first_question
+  def before_validation_set_first_and_next_question
+    if current_question.present?
+      set_next_question
+    else
+      set_first_question
+    end
+  end
+
+  def set_first_question
     self.current_question = test.questions.first if test.present?
   end
 
-  def before_validation_next_question
+  def set_next_question
     next_question = test.questions.order(:id).where('id > ?', current_question.id).first
     self.current_question = next_question
   end
@@ -35,5 +60,17 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def percentage_formula
+    ( correct_questions * 100 ) / test.question_ids.size
+  end
+
+  def success?
+    if percentage_formula >= SUCCES_RATE
+      true
+    else
+      false
+    end
   end
 end
