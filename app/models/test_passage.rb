@@ -4,8 +4,6 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_and_next_question
-  
-  SUCCES_RATE = 85
 
   def completed?
     current_question.nil?
@@ -17,22 +15,6 @@ class TestPassage < ApplicationRecord
     end
 
     save!
-  end
-
-  def color_result
-    if success? == true
-      "color:#32CD32"
-    else
-      "color:#ff0000"
-    end
-  end
-
-  def result_test
-    if success? == true
-      "Result: #{percentage_formula}% Successful completion of the test"
-    else
-      "Result: #{percentage_formula}% Test failed"
-    end
   end
 
   private
@@ -62,15 +44,4 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-  def percentage_formula
-    ( correct_questions * 100 ) / test.question_ids.size
-  end
-
-  def success?
-    if percentage_formula >= SUCCES_RATE
-      true
-    else
-      false
-    end
-  end
 end
