@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  
+
+  skip_before_action :authenticate_user!
+
   def new
 
   end
@@ -11,14 +13,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_back_or tests_path
     else
-      allert_flash_helper
+      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
       render :new
     end
   end
 
   def destroy
     session.delete(:user_id)
-    cookies.delete(:forwarding_url) # для эксперимента, на случай аутентификации второго пользователя
     redirect_to login_path
   end
 
