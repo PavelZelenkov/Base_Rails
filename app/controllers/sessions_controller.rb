@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def redirect_back_or(default) # перенаправление для нужную страницу после логина
+  def redirect_back_or(default)
     redirect_to(cookies[:forwarding_url] || default)
     cookies.delete(:forwarding_url)
   end

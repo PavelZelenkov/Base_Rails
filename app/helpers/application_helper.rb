@@ -8,20 +8,8 @@ module ApplicationHelper
     link_to "GitHub-репозиторий проекта", "https://www.github.com/#{author}/#{repo}/tree/master", target: :blank
   end
 
-  # def flash_message
-  #   content_tag :p, flash[:alert], class: "flash alert" if flash[:alert]
-  # end
-  
-  # def flash_message(flash_type)
-  #   content_tag :p, flash["#{flash_type}"], class: "flash #{flash_type}" if flash["#{flash_type}"]
-  # end
-
-
-
-  FLASH_TYPE = [:alert].freeze
-  
-  def flash_message
-    FLASH_TYPE.each { |x| content_tag :p, flash[x], class: "flash #{x}" if flash[x] }
+  def flash_message(type, message)
+      content_tag :p, message, class: "flash #{type}" if flash[type]
   end
 
 end
