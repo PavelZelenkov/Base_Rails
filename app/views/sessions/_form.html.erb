@@ -1,8 +1,5 @@
 <%= form_with url: session_path, local: true do |form| %>
-  <% flash.map do |type, message| %>
-      <%= flash_message(type, message) %>
-  <% end %>
-
+  <%= flash_message %>
   
   <p>
     <%= form.label :email %>
