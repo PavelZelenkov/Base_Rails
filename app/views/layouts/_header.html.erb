@@ -1,13 +1,6 @@
-<% if logged_in? %>
-  <h1><%= link_to 'TestGuru', root_path %></h1>
+<% if user_signed_in? %>
   <p class="nav user">
-    Welcome, <b><%= current_user.email %></b> Guru<br>
-    <%= link_to 'Sign Out', session_path, method: :delete, data: { confirm: 'Are you sure?'} %>
-  </p>
-<% else %>
-  <h1><%= link_to 'TestGuru', login_path %></h1>
-  <p class="nav user">
-    <%= link_to 'Sign Up', signup_path %> |
-    <%= link_to 'Log In', login_path %>
+    Welcome, <b><%= current_user.email %></b> Guru |
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   </p>
 <% end %>
