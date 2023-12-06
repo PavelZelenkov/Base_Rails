@@ -4,19 +4,17 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   
-  helper_method :redirection_by_user_type
-
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:title])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name, :user_surname])
   end
 
-  def redirection_by_user_type
-    if current_user.is_a?(Admin)
-      redirect_to admin_tests_path
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      admin_tests_path
     else
-      respond_with resource, location: after_sign_in_path_for(resource)
+      stored_location_for(resource) || tests_path
     end
   end
 

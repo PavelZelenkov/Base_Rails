@@ -18,10 +18,10 @@ class Devise::SessionsController < DeviseController
   def create
     self.resource = warden.authenticate!(auth_options)
     # set_flash_message!(:notice, :signed_in)
-    flash[:notice] = "Привет #{current_user.title}!"
+    flash[:notice] = "Привет #{current_user.user_name}!"
     sign_in(resource_name, resource)
     yield resource if block_given?
-    redirection_by_user_type
+    respond_with resource, location: after_sign_in_path_for(resource)
   end
 
   # DELETE /resource/sign_out
