@@ -4,6 +4,16 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+  before_action :set_locale
+
+  def default_url_options
+    if I18n.locale != I18n.default_locale
+      { lang: I18n.locale }
+    else
+      { lang: nil }
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
@@ -16,6 +26,12 @@ class ApplicationController < ActionController::Base
     else
       stored_location_for(resource) || tests_path
     end
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 
 end
