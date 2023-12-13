@@ -1,18 +1,18 @@
-<h1>All Questions - <%= @tests.title %></h1>
-<h2>Level: <%= @tests.level %></h2>
+# <h1>All Questions - <%= @tests.title %></h1>
+# <h2>Level: <%= @tests.level %></h2>
 
-<p>
-  <%= link_to 'New question', new_test_question_path %>
-</p>
+# <p>
+#   <%= link_to 'New question', new_test_question_path %>
+# </p>
 
-<table>
-  <tr>
-    <th>Questions:</th>
-  </tr>
+# <table>
+#   <tr>
+#     <th>Questions:</th>
+#   </tr>
 
-  <% @question.each do |question| %>
-    <tr>
-      <td><%= question.body %></td>
-    </tr>
-  <% end %>
-</table>
+#   <% @question.each do |question| %>
+#     <tr>
+#       <td><%= question.body %></td>
+#     </tr>
+#   <% end %>
+# </table>

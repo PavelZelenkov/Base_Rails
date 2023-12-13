@@ -31,3 +31,163 @@
 
 en:
   hello: "Hello world"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      number_of_question: "Number of question"
+      action: "Action"
+
+    test:  
+      start: "Start"
+
+  test_passages:
+    show:
+      header: "Passing the %{title} Test"
+      questions: "Question_number: %{index} | Total questions: %{question_size}"
+      next: "Next"
+
+    result:
+      header: "The %{title} Test was Completed!"
+      all_test: "All test"
+      successful_result: "Result: %{success}% Successful completion of the test"
+      failed_result: "Result: %{success}% Test failed"
+
+  layouts:
+    header:
+      welcome: "Welcome"
+      logout: "Logout"
+
+    footer:
+      author: "Author - Zelenkov Pavel"
+      project: "Educational project at Thinknetica online school"
+      more_project_author: "More about the project and author"
+  
+  admin:
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirmation: "Are you sure?"
+      show:
+        question: "Question"
+        answer: "Answer"
+        correct: "Correct"
+        back: "Back"
+      new:
+        header: "New Answer"
+        back: "Back"
+      edit:
+        header: "Edit Answer"
+        back: "Back"
+
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirmation: "Are you sure?"
+      new:
+        back: "Back"
+      show:
+        answers: "Answers"
+        new_answer: "New answer"
+        back: "Back"
+        edit: "Edit"
+        delete: "Delete"
+        confirmation: "Are you sure?"
+      edit:
+        back: "Back"
+
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "All Tests"
+        new_test: "New test"
+        title: "Title"
+        level: "Level"
+        number_of_question: "Number of question"
+        action: "Action"
+      test:  
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirmation: "Are you sure?"
+      new:
+        header: "Create New Test"
+        back: "Back"
+      edit:
+        header: "Edit %{title} test"
+        back: "Back"
+      show:
+        title: "Title"
+        level: "Level"
+        new_question: "New question"
+        questions: "Questions"
+        action: "Action"
+        edit: "Edit"
+        back: "Back"
+        delete: "Delete"
+        confirmation: "Are you sure?"
+
+    nav:
+      header: "TestGuru Admin Panel"
+      welcome: "Welcome"
+      logout: "Logout"
+
+  helpers:
+    select:
+      prompt: 'Select: '
+
+    submit:
+      test:
+        create: "Create %{model}"
+        submit: "Save %{model}"
+        update: "Update %{model}"
+      question:
+        create: "Create %{model}"
+        submit: "Save %{model}"
+        update: "Update %{model}"
+      answer:
+        create: "Create %{model}"
+        submit: "Save %{model}"
+        update: "Update %{model}"
+
+    lebel:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:  
+        body: "Body"
+      answer:
+        body: "Body"
+        correct: "Correct"
+
+    application_helper:
+      github_url: 
+        rep: "GitHub-project repository"
+
+    questions_helper:
+      question_header:
+        create: "Create %{title} New Question"
+        edit: "Edit %{title} question"
+
+    answers_helper:
+      correct_true_and_false:
+        true: "True!"
+        false: "False!"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
