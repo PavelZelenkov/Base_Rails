@@ -1,9 +1,13 @@
-<h1><%= t('.header') %></h1>
+<div class="row">  
+  <div class="col col-md-4">
+    <h1><%= t('.header') %></h1>
 
-<p>
-  <%= @question.body %>
-</p>
+    <p>
+      <%= @question.body %>
+    </p>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to t('.back'), admin_question_path(@question) %>
+    <%= link_to t('.back'), admin_question_path(@question) %>
+  </div>
+</div>

@@ -1,26 +1,31 @@
-<p>
-  <strong><%= t('.title') %>:</strong>
-  <%= @test.title %>
-</p>
+<div class="row">  
+  <div class="col col-md-4">    
+    <p>
+      <strong><%= t('.title') %>:</strong>
+      <%= @test.title %>
+    </p>
 
-<p>
-  <strong><%= t('.level') %>:</strong>
-  <%= @test.level %>
-</p>
+    <p>
+      <strong><%= t('.level') %>:</strong>
+      <%= @test.level %>
+    </p>
 
-<p>
-  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
-</p>
+    <p>
+      <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
+    </p>
 
-<table>
-  <tr>
-    <th><%= t('.questions') %></th>
-    <th colspan="3"><%= t('.action') %></th>
-  </tr>
+    <table class="table table-bordered">
+      <tr>
+        <th><%= t('.questions') %></th>
+        <th colspan="3" class="text-center"><%= t('.action') %></th>
+      </tr>
 
-  <%= render @test.questions %>
-</table><br>
+      <%= render @test.questions %>
+    </table><br>
 
-<%= link_to t('.edit'), edit_admin_test_path(@test) %> |
-<%= link_to t('.back'), admin_tests_path %> |
-<%= link_to t('.delete'), admin_test_path(@test), method: :delete, data: { confirm: t('.confirmation')} %>
+    <%= link_to t('.edit'), edit_admin_test_path(@test) %> |
+    <%= link_to t('.back'), admin_tests_path %> |
+    <%= link_to t('.delete'), admin_test_path(@test), method: :delete, data: { confirm: t('.confirmation')} %>
+
+  </div>
+</div>

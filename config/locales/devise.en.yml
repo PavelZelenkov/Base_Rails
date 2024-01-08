@@ -8,6 +8,7 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
       new:
         resend_confirmation_instructions: "Resend confirmation instructions"
+        enter_email: "Enter email"
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
@@ -64,6 +65,7 @@ en:
       new:
         forgot_your_password: "Forgot your password?"
         send_me_reset_password_instructions: "Send me reset password instructions"
+        enter_email: "Enter email"
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
@@ -77,6 +79,9 @@ en:
         become_a_guru: "Become a Guru"
         sign_up: "Sign up"
         characters_minimum: "characters minimum"
+        enter_name: "Enter name"
+        enter_surname: "Enter surname"
+        enter_email: "Enter email"
     sessions:
       signed_in: "Hello %{current_user.user_name}."
       signed_out: "Signed out successfully."
@@ -84,19 +89,20 @@ en:
       new:
         enter: "Enter"
         header: "Enter the Guru Gates"
+        remember_me: "Remember me"
+        enter_email: "Enter email"
     shared:
       links:
-        log_in: "Log in"
         back: "Back"
         didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
         didn_t_receive_unlock_instructions: "Didn't receive unlock instructions?"
         forgot_your_password: "Forgot your password?"
         sign_in: "Sing in"
         sign_in_with_provider: "Sign in with: %{provider}"
-        sign_up: "Sing up"
     unlocks:
       new:
         resend_unlock_instructions: "Resend unlock instructions"
+        enter_email: "Enter email"
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."

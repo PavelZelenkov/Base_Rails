@@ -1,9 +1,15 @@
-<h1 style="font-size: 16px;"><%= t(".author") %></h1>
+<nav class="navbar bg-body">
+  <div class="container-fluid"> 
+    <div class="card-body">
+        <h1 class="card-title", style="font-size: 16px;"><%= t(".author") %></h1>
 
-<ul style="font-size: 15px;">
-  <li><%= link_to t(".project"), "https://www.thinknetica.com", target: :blank %></li>
-  <li><%= github_url('PavelZelenkov', 'Base_Rails') %></li>
-  <li><%= link_to t(".more_project_author"), "http://127.0.0.1:3000/about.html" %></li>
-</ul>
+        <ul style="font-size: 15px;">
+          <li><%= link_to t(".project"), "https://www.thinknetica.com", target: :blank %></li>
+          <li><%= github_url('PavelZelenkov', 'Base_Rails') %></li>
+          <li><%= link_to t(".more_project_author"), "http://127.0.0.1:3000/about.html" %></li>
+        </ul>
 
-<div><%= this_year %></div>
+        <div><%= this_year %></div>
+    </div>
+  </div>
+</nav>
