@@ -26,16 +26,16 @@ ru:
       failed_result: "Результат: %{success}% Тест не пройден"
   
   layouts:
-    header:
-      welcome: "Добро пожаловать"
-      logout: "Выход"
-
     footer:
       author: "Автор - Зеленков Павел"
       project: "Учебный проект в онлайн-школе Thinknetica"
       more_project_author: "Подробнее о проекте и авторе"
 
   admin:
+    base_controller:
+      admin_required!:
+        alert_admin: "У вас нет прав для просмотра этой страницы."
+
     answers:
       answer:
         show: "Показать"
@@ -163,4 +163,10 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: " Обнаружено %{count} ошибки"
+    
+    nav:
+      welcome: "Добро пожаловать"
+      logout: "Выход"
+      log_in: "Авторизоваться"
+      sign_up: "Регистрация"
     

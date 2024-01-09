@@ -1,12 +1,21 @@
-<h1><%= t('.header') %></h1>
+<div class="row mt-3"> 
+  <div class="col col-md-4">
+    <h1><%= t('.header') %></h1>
 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.number_of_question') %></th>
-    <th><%= t('.action') %></th>
-  </tr>
+    <table class="table table-hover">
+      <thead>  
+        <tr>
+          <th><%= t('.title') %></th>
+          <th class="text-center"><%= t('.level') %></th>
+          <th class="text-center"><%= t('.number_of_question') %></th>
+          <th class="text-center"><%= t('.action') %></th>
+        </tr>
+      </thead>
 
-  <%= render @tests %>
-</table>
+      <tbody class="table-group-divider">
+        <%= render @tests %>
+      </tbody>
+
+    </table>
+  </div>
+</div>

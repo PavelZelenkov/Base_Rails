@@ -25,6 +25,8 @@ en:
         unconfirmed_email: Unconfirmed email
         unlock_token: Unlock token
         updated_at: Updated at
+        user_name: "User"
+        user_surname: "Surname"
       test:
         title: "Title"
         category_id: "Category"

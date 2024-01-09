@@ -1,13 +1,17 @@
-<h1><%= @question.body %></h1>
+<div class="row">  
+  <div class="col col-md-4">    
+    <h1><%= @question.body %></h1>
 
-<h2><%= t('.answers') %></h2>
+    <h2><%= t('.answers') %></h2>
 
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
 
-<ol>
-  <%= render @question.answers %>
-</ol>
+    <ol>
+      <%= render @question.answers %>
+    </ol>
 
-<%= link_to t('.back'), admin_test_path(@question.test) %> |
-<%= link_to t('.edit'), edit_admin_question_path(@question) %> |
-<%= link_to t('.delete'), admin_question_path(@question), method: :delete, data: { confirm: t('.confirmation')} %>
+    <%= link_to t('.back'), admin_test_path(@question.test) %> |
+    <%= link_to t('.edit'), edit_admin_question_path(@question) %> |
+    <%= link_to t('.delete'), admin_question_path(@question), method: :delete, data: { confirm: t('.confirmation')} %>
+  </div>
+</div>

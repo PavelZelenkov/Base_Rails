@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      <% if current_user != nil && current_user.admin? %>
+        <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+        <div class="vr"></div>
+        <%= link_to admin_tests_path, class: 'navbar-brand' do %>
+          <i class="bi bi-tools"></i>
+        <% end %>
+
+      <% else %>
+        <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+      <% end %>
+    </span>
+    
+    <span class="navbar-text">
+      <% if user_signed_in? %>
+        <%= t('.welcome') %>, <b><%= current_user.email %></b> Guru |
+        <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to t('.log_in'), new_session_path(resource_name) %> |
+        <%= link_to t('.sign_up'), new_registration_path(resource_name) %>
+      <% end %>
+    </span>
+  </div>
+</nav>

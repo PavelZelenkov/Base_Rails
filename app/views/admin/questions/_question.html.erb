@@ -1,6 +1,6 @@
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to t('.show'), admin_question_path(question) %></td>
-  <td><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
-  <td><%= link_to t('.delete'), admin_question_path(question), method: :delete, data: { confirm: t('.confirmation')} %></td>
+  <td class="text-center"><%= link_to t('.show'), admin_question_path(question) %></td>
+  <td class="text-center"><%= link_to t('.edit'), edit_admin_question_path(question) %></td>
+  <td class="text-center"><%= link_to t('.delete'), admin_question_path(question), method: :delete, data: { confirm: t('.confirmation')} %></td>
 </tr>

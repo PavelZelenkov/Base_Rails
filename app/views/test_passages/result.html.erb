@@ -1,9 +1,13 @@
-<h1><%= t('.header' ,title: @test_passage.test.title) %></h1>
+<div class="row">  
+  <div class="col col-md-4">  
+    <h1><%= t('.header' ,title: @test_passage.test.title) %></h1>
 
-<h2> <% if @test_passage.success? %> </h2>
-<h2 style="color:#32CD32"><%= t('.successful_result', success: @test_passage.percentage_formula) %></h2>
-<h2> <% else %> </h2>
-<h2 style="color:#ff0000"><%= t('.failed_result', success: @test_passage.percentage_formula) %></h2>
-<h2> <% end %> </h2>
+    <h2> <% if @test_passage.success? %> </h2>
+    <h2 style="color:#32CD32"><%= t('.successful_result', success: @test_passage.percentage_formula) %></h2>
+    <h2> <% else %> </h2>
+    <h2 style="color:#ff0000"><%= t('.failed_result', success: @test_passage.percentage_formula) %></h2>
+    <h2> <% end %> </h2>
 
-<%= link_to t('.all_test'), tests_path %>
+    <%= link_to t('.all_test'), tests_path %>
+  </div>
+</div>  

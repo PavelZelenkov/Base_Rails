@@ -56,16 +56,16 @@ en:
       failed_result: "Result: %{success}% Test failed"
 
   layouts:
-    header:
-      welcome: "Welcome"
-      logout: "Logout"
-
     footer:
       author: "Author - Zelenkov Pavel"
       project: "Educational project at Thinknetica online school"
       more_project_author: "More about the project and author"
   
   admin:
+    base_controller:
+      admin_required!:
+        alert_admin: "You are not authorized to view this page."
+
     answers:
       answer:
         show: "Show"
@@ -191,3 +191,9 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+
+    nav:
+      welcome: "Welcome"
+      logout: "Logout"
+      log_in: "Log in"
+      sign_up: "Sing up"
