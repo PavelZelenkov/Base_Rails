@@ -3,11 +3,11 @@
     <% flash.each do |type, message| %>
       <% if flash[type] == flash[:alert] %>
         <div class="alert alert-danger" role="alert">
-          <%= content_tag :p, message, class: "flash #{type}" %>
+          <%= content_tag :p, message.html_safe, class: "flash #{type}" %>
         </div>
       <% else %>
         <div class="alert alert-primary" role="alert">
-          <%= content_tag :p, message, class: "flash #{type}" %>
+          <%= content_tag :p, message.html_safe, class: "flash #{type}" %>
         </div>
       <% end %>
     <% end %>
