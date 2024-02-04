@@ -25,6 +25,9 @@ ru:
       successful_result: "Результат: %{success}% Успешное прохождение теста"
       failed_result: "Результат: %{success}% Тест не пройден"
 
+    gist_create:
+      failure: "Во время сохранения gist произошла ошибка"
+
     gist:
       success: "Gist успешно сохранен! %{link}"
       failure: "Во время сохранения gist произошла ошибка"

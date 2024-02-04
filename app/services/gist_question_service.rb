@@ -14,6 +14,12 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
+  def success?
+    user = @client.user
+    response = @client.last_response
+    response.status
+  end
+
   private
 
   def gist_params

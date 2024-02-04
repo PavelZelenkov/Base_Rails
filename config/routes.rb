@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     member do
       get :result
       post :gist
+      post :gist_create
     end
   end
 
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/admin/gists', to: 'admin/gists#index'
+  namespace :admin do
+    resources :gists, only: %i[index]
+  end
   
 end
