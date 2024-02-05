@@ -13,6 +13,11 @@ ru:
     test:  
       start: "Начать"
 
+  gists:
+    create:
+      failure: "Во время сохранения gist произошла ошибка"
+      success: "Gist успешно сохранен! %{link}"
+
   test_passages:
     show:
       header: "Прохождение %{title} теста"
@@ -25,13 +30,6 @@ ru:
       successful_result: "Результат: %{success}% Успешное прохождение теста"
       failed_result: "Результат: %{success}% Тест не пройден"
 
-    gist_create:
-      failure: "Во время сохранения gist произошла ошибка"
-
-    gist:
-      success: "Gist успешно сохранен! %{link}"
-      failure: "Во время сохранения gist произошла ошибка"
-  
   layouts:
     footer:
       author: "Автор - Зеленков Павел"

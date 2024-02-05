@@ -43,6 +43,11 @@ en:
     test:  
       start: "Start"
 
+  gists:
+    create:
+      failure: "An error occurred while saving gist"
+      success: "Gist was successfully created! %{link}"
+
   test_passages:
     show:
       header: "Passing the %{title} Test"
@@ -54,13 +59,6 @@ en:
       all_test: "All test"
       successful_result: "Result: %{success}% Successful completion of the test"
       failed_result: "Result: %{success}% Test failed"
-
-    gist_create:
-      failure: "An error occurred while saving gist"
-
-    gist:
-      success: "Gist was successfully created! %{link}"
-      failure: "An error occurred while saving gist"
 
   layouts:
     footer:
