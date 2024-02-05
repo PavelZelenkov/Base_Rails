@@ -30,6 +30,6 @@ Rails.application.routes.draw do
     resources :gists, only: %i[index]
   end
 
-  resources :gists, only: %i[new create]
+  resources :gists, only: %i[create]
   
 end
