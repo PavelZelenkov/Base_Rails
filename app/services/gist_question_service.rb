@@ -15,9 +15,9 @@ class GistQuestionService
   end
 
   def success?
-    user = @client.user
     response = @client.last_response
-    if response.status == 200
+    response.status
+    if response.status == 201
       true
     else
       false
