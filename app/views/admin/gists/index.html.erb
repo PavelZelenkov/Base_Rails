@@ -1,0 +1,25 @@
+<div class="row">  
+  <div class="col col-md-4">
+
+    <h1><%= t('.header') %></h1>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t('.question') %></th>
+          <th>Gist URL</th>
+          <th><%= t('.user') %></th>
+        </tr>
+      </thead>
+
+      <tbody class="table-group-divider">
+        <%= render @gists %>
+      </tbody>  
+    </table> 
+
+    <p>
+      <%= link_to t('.back'), admin_tests_path %>
+    </p>
+
+  </div>  
+</div>

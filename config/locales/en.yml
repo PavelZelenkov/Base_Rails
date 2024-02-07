@@ -43,6 +43,11 @@ en:
     test:  
       start: "Start"
 
+  gists:
+    create:
+      failure: "An error occurred while saving gist"
+      success: "Gist was successfully created! %{link}"
+
   test_passages:
     show:
       header: "Passing the %{title} Test"
@@ -62,6 +67,13 @@ en:
       more_project_author: "More about the project and author"
   
   admin:
+    gists:
+      index:
+        header: "All Gist"
+        question: "Question"
+        user: "User"
+        back: "Back to Tests"
+
     base_controller:
       admin_required!:
         alert_admin: "You are not authorized to view this page."
@@ -112,6 +124,7 @@ en:
         level: "Level"
         number_of_question: "Number of question"
         action: "Action"
+        all_gists: "All created by Gist"
       test:  
         show: "Show"
         edit: "Edit"
@@ -197,3 +210,9 @@ en:
       logout: "Logout"
       log_in: "Log in"
       sign_up: "Sing up"
+  
+  app:
+    services:
+      gist_question_service:
+        gist_params:
+          text: "A question about %{title} from TestGuru"

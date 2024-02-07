@@ -13,6 +13,11 @@ ru:
     test:  
       start: "Начать"
 
+  gists:
+    create:
+      failure: "Во время сохранения gist произошла ошибка"
+      success: "Gist успешно сохранен! %{link}"
+
   test_passages:
     show:
       header: "Прохождение %{title} теста"
@@ -24,7 +29,7 @@ ru:
       all_test: "Все тесты"
       successful_result: "Результат: %{success}% Успешное прохождение теста"
       failed_result: "Результат: %{success}% Тест не пройден"
-  
+
   layouts:
     footer:
       author: "Автор - Зеленков Павел"
@@ -32,6 +37,13 @@ ru:
       more_project_author: "Подробнее о проекте и авторе"
 
   admin:
+    gists:
+      index:
+        header: "Все Gist"
+        question: "Вопрос"
+        user: "Пользователь"
+        back: "Назад к Тестам"
+
     base_controller:
       admin_required!:
         alert_admin: "У вас нет прав для просмотра этой страницы."
@@ -82,6 +94,7 @@ ru:
         level: "Уровень"
         number_of_question: "Количество вопросов"
         action: "Действия"
+        all_gists: "Все созданные Gist"
       test:  
         show: "Показать"
         edit: "Редактировать"
@@ -169,4 +182,10 @@ ru:
       logout: "Выход"
       log_in: "Авторизоваться"
       sign_up: "Регистрация"
+
+  app:  
+    services:
+      gist_question_service:
+        gist_params:
+          text: "Вопрос о %{title} от TestGuru"
     

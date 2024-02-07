@@ -1,0 +1,7 @@
+<tr>
+  <td class="d-inline-block text-truncate" style="max-width: 250px;">
+    <%= link_to gist.question.body, admin_question_path(gist.question) %>
+  </td>
+  <td><%= link_to gist.url, gist.url, target: :blank %></td>
+  <td><%= gist.user.email %></td>
+</tr>

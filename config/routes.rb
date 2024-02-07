@@ -25,5 +25,11 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :admin do
+    resources :gists, only: %i[index]
+  end
+
+  resources :gists, only: %i[create]
   
 end
