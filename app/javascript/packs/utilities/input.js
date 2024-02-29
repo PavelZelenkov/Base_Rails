@@ -4,12 +4,13 @@ document.addEventListener('turbolinks:load', function() {
 
   if (control2) { control2.addEventListener('input', function() {
     if (control2.value.trim().length === 0) {
-      control2.style.backgroundColor = "transparent"
-    } else if (control1.value === control2.value) {
+      return (control2.style.backgroundColor = "transparent")
+    };
+    if (control1.value === control2.value) {
       control2.style.backgroundColor = "LimeGreen"
     } else {
       control2.style.backgroundColor = "Red"
-    };
-  }) };
-  
+    }})
+  };
+
 });
