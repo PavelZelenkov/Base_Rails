@@ -146,6 +146,8 @@ en:
         back: "Back"
         delete: "Delete"
         confirmation: "Are you sure?"
+      form_inline:
+        submit: "OK"
 
     nav:
       header: "TestGuru Admin Panel"
