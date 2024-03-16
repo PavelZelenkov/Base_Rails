@@ -1,11 +1,12 @@
 class Admin::TestsController < Admin::BaseController
   
-  before_action :set_test, only: %i[destroy show edit update]
+  before_action :set_tests, only: %i[index update_inline]
+  before_action :set_test, only: %i[destroy show edit update update_inline]
 
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_with_test_not_found
   
   def index
-    @tests = Test.all
+
   end
 
   def destroy
@@ -43,7 +44,19 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
+  def update_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
+  end
+
   private
+
+  def set_tests
+    @tests = Test.all
+  end
 
   def set_test
     @test = Test.find(params[:id])

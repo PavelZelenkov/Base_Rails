@@ -2,10 +2,12 @@
   <div class="col col-md-12">
     <h1><%= t('.header' ,title: @test_passage.test.title) %></h1>
 
+    <%= render 'progress_bar' %>
+
     <b>
     <% @test_passage.test.question_ids.each_with_index do |name, index| %>
       <% if "#{name}" == "#{@test_passage.current_question.id}" %>
-        <%= t('.questions', index: index + 1, question_size: @test_passage.test.question_ids.size)%>
+        <%= t('.questions', index: index + 1, question_size: @test_passage.test.question_ids.size,) %>
       <% end %>
     <% end %>
     </b><br>

@@ -116,6 +116,8 @@ ru:
         back: "Назад"
         delete: "Удалить"
         confirmation: "Вы уверены?"
+      form_inline:
+        submit: "OK"
 
     nav:
       header: "TestGuru Панель Администратора"

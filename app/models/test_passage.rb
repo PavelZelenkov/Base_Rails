@@ -27,6 +27,14 @@ class TestPassage < ApplicationRecord
     percentage_formula >= SUCCES_RATE
   end
 
+  def progress_bar_formula
+    100 / test.question_ids.size
+  end
+
+  def question_index_formula(index)
+    test.question_ids.index(index) + 1
+  end
+
   private
 
   def before_validation_set_first_and_next_question

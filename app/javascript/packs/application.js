@@ -8,6 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import "packs/utilities/input"
+import "packs/utilities/sorting"
+import "packs/utilities/form_inline"
+import "packs/utilities/progres_bar"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

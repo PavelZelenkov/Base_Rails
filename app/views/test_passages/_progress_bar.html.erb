@@ -1,0 +1,7 @@
+<div class="progress-bar" 
+     data-progress-fill="<%= @test_passage.progress_bar_formula %>"
+     data-question-index="<%= @test_passage.question_index_formula(@test_passage.current_question.id) %>">
+  <div class="progress-fill"></div>
+  <span class="progress-text"></span>
+</div>
+<br>
