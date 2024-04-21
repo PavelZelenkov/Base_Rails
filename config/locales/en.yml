@@ -43,6 +43,16 @@ en:
     test:  
       start: "Start"
 
+  feedback:
+    index:
+      header: "Feedback"
+      body: "Body:"
+      back: "Back"
+      send: "Send"
+    create:
+      success: "Message sent successfully"
+      failure: "An error occurred while sending the message"
+
   gists:
     create:
       failure: "An error occurred while saving gist"
@@ -172,7 +182,7 @@ en:
         submit: "Save %{model}"
         update: "Update %{model}"
 
-    lebel:
+    label:
       test:
         title: "Title"
         level: "Level"

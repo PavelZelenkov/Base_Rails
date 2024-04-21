@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_30_195025) do
+ActiveRecord::Schema.define(version: 2024_04_18_175653) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -29,9 +32,17 @@ ActiveRecord::Schema.define(version: 2024_01_30_195025) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "body", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
+  end
+
   create_table "gists", force: :cascade do |t|
-    t.integer "question_id", null: false
-    t.integer "user_id"
+    t.bigint "question_id", null: false
+    t.bigint "user_id"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,6 +111,7 @@ ActiveRecord::Schema.define(version: 2024_01_30_195025) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "categories", "users"
+  add_foreign_key "feedbacks", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
