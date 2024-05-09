@@ -43,6 +43,10 @@ en:
     test:  
       start: "Start"
 
+    start:
+      failure_questions: "There are no questions in this test yet, please select another test"
+      failure_answers: "There are no answers to this test yet, please select another test"
+
   feedback:
     index:
       header: "Feedback"
@@ -63,6 +67,9 @@ en:
       header: "Passing the %{title} Test"
       questions: "Question_number: %{index} | Total questions: %{question_size}"
       next: "Next"
+
+    update:
+      success: "No answer option selected!"
 
     result:
       header: "The %{title} Test was Completed!"
@@ -135,11 +142,14 @@ en:
         number_of_question: "Number of question"
         action: "Action"
         all_gists: "All created by Gist"
+        test_status: "Test status"
       test:  
         show: "Show"
         edit: "Edit"
         delete: "Delete"
         confirmation: "Are you sure?"
+        published: "Published"
+        not_published: "Not published"
       new:
         header: "Create New Test"
         back: "Back"
@@ -187,6 +197,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        correct: "Published"
       question:  
         body: "Body"
       answer:
