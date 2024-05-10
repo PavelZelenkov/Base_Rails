@@ -19,7 +19,7 @@
                 data: { confirm: t('.confirmation')} %>
   </td>
   <td class="text-center">
-    <% if test.correct? %>
+    <% if test.publication %>
       <%= t('.published') %>
     <% else %>
       <%= t('.not_published') %>

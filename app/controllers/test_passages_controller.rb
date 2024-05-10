@@ -13,7 +13,7 @@ class TestPassagesController < ApplicationController
 
   def update
     if @test_passage.answer_selected?(params[:answer_ids])
-      flash[:notice] = t('.success')
+      flash[:alert] = t('.failure')
       render :show
     else
       @test_passage.accept!(params[:answer_ids])

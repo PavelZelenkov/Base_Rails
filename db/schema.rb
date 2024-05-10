@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2024_05_03_172413) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id"
-    t.boolean "correct", default: false
+    t.boolean "publication", default: false
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["id"], name: "tests_id_idx"

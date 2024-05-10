@@ -39,6 +39,7 @@ en:
       level: "Level"
       number_of_question: "Number of question"
       action: "Action"
+      feedback: "Feedback"
 
     test:  
       start: "Start"
@@ -69,7 +70,7 @@ en:
       next: "Next"
 
     update:
-      success: "No answer option selected!"
+      failure: "No answer option selected!"
 
     result:
       header: "The %{title} Test was Completed!"
@@ -197,7 +198,7 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
-        correct: "Published"
+        publication: "Published"
       question:  
         body: "Body"
       answer:
