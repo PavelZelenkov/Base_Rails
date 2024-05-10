@@ -25,8 +25,4 @@ class Test < ApplicationRecord
   end
 
   scope :publication, -> { where(publication: true) }
-
-  def self.test_with_publication
-    Test.publication
-  end
 end
