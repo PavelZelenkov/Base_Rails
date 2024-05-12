@@ -23,4 +23,6 @@ class Test < ApplicationRecord
   def self.test_with_category(category)
     Test.with_category(category).order(title: :asc).pluck(:title)
   end
+
+  scope :publication, -> { where(publication: true) }
 end

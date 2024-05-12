@@ -9,9 +9,24 @@ ru:
       level: "Уровень"
       number_of_question: "Количество вопросов"
       action: "Действия"
+      feedback: "Обратная связь"
 
     test:  
       start: "Начать"
+
+    start:
+      failure_questions: "В данном тесте ещё нет вопросов, выберите другой тест"
+      failure_answers: "В данном тесте ещё нет ответов, выберите другой тест"
+
+  feedback:
+    index:
+      header: "Обратная связь"
+      body: "Напишите сообщение:"
+      back: "Назад"
+      send: "Отправить"
+    create:
+      success: "Сообщение отправлено успешно"
+      failure: "Во время отправки сообщения произошла ошибка"
 
   gists:
     create:
@@ -23,6 +38,9 @@ ru:
       header: "Прохождение %{title} теста"
       questions: "Номер вопроса: %{index} | Всего вопросов: %{question_size}"
       next: "Дальше"
+
+    update:
+      failure: "Вариант ответа не выбран!"
 
     result:
       header: "Тест %{title} Завершен!"
@@ -95,11 +113,14 @@ ru:
         number_of_question: "Количество вопросов"
         action: "Действия"
         all_gists: "Все созданные Gist"
+        test_status: "Статус теста"
       test:  
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
         confirmation: "Вы уверены?"
+        published: "Опубликовано"
+        not_published: "Не опубликовано"
       new:
         header: "Создать Новый Тест"
         back: "Назад"
@@ -147,6 +168,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        publication: "Опубликовано"
       question:  
         body: "Тело вопроса"
       answer:

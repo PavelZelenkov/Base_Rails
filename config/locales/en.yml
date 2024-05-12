@@ -39,9 +39,24 @@ en:
       level: "Level"
       number_of_question: "Number of question"
       action: "Action"
+      feedback: "Feedback"
 
     test:  
       start: "Start"
+
+    start:
+      failure_questions: "There are no questions in this test yet, please select another test"
+      failure_answers: "There are no answers to this test yet, please select another test"
+
+  feedback:
+    index:
+      header: "Feedback"
+      body: "Body:"
+      back: "Back"
+      send: "Send"
+    create:
+      success: "Message sent successfully"
+      failure: "An error occurred while sending the message"
 
   gists:
     create:
@@ -53,6 +68,9 @@ en:
       header: "Passing the %{title} Test"
       questions: "Question_number: %{index} | Total questions: %{question_size}"
       next: "Next"
+
+    update:
+      failure: "No answer option selected!"
 
     result:
       header: "The %{title} Test was Completed!"
@@ -125,11 +143,14 @@ en:
         number_of_question: "Number of question"
         action: "Action"
         all_gists: "All created by Gist"
+        test_status: "Test status"
       test:  
         show: "Show"
         edit: "Edit"
         delete: "Delete"
         confirmation: "Are you sure?"
+        published: "Published"
+        not_published: "Not published"
       new:
         header: "Create New Test"
         back: "Back"
@@ -172,11 +193,12 @@ en:
         submit: "Save %{model}"
         update: "Update %{model}"
 
-    lebel:
+    label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        publication: "Published"
       question:  
         body: "Body"
       answer:

@@ -23,6 +23,14 @@
       <%= render @test.questions %>
     </table><br>
 
+    <%= form_with(model:[:admin, @test]) do |form| %>
+      <p>
+        <%= form.label :publication %><br>
+        <%= form.check_box :publication, id: :test_publication, class: 'form-check-input' %><br>
+        <%= form.submit class: 'btn btn-primary' %>
+      </p>
+    <% end %>
+
     <%= link_to t('.edit'), edit_admin_test_path(@test) %> |
     <%= link_to t('.back'), admin_tests_path %> |
     <%= link_to t('.delete'), admin_test_path(@test), method: :delete, data: { confirm: t('.confirmation')} %>

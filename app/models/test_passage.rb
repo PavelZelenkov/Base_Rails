@@ -19,6 +19,10 @@ class TestPassage < ApplicationRecord
     save!
   end
 
+  def answer_selected?(answer_ids)
+    answer_ids.nil?
+  end
+
   def percentage_formula
     ( correct_questions * 100 ) / test.question_ids.size
   end
