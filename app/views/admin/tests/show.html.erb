@@ -25,8 +25,12 @@
 
     <%= form_with(model:[:admin, @test]) do |form| %>
       <p>
+        <%= form.label :test_time %><br>
+        <%= form.text_field :test_time, id: :test_test_time, class: 'form-control' %><br>
+
         <%= form.label :publication %><br>
         <%= form.check_box :publication, id: :test_publication, class: 'form-check-input' %><br>
+        
         <%= form.submit class: 'btn btn-primary' %>
       </p>
     <% end %>

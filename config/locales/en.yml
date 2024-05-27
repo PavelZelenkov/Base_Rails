@@ -68,6 +68,8 @@ en:
       header: "Passing the %{title} Test"
       questions: "Question_number: %{index} | Total questions: %{question_size}"
       next: "Next"
+    countdown:
+      test_time: "Time to complete the test in minutes"
 
     update:
       failure: "No answer option selected!"
@@ -199,6 +201,7 @@ en:
         level: "Level"
         category_id: "Category"
         publication: "Published"
+        test_time: "Set test time"
       question:  
         body: "Body"
       answer:
