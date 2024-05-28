@@ -21,6 +21,7 @@ document.addEventListener('turbolinks:load', function() {
       const diff = deadline - new Date();
       if (diff <= 0 && idTest) {
         clearInterval(timerId);
+        alert("Время прохождения теста вышло!");
         window.location.href = idResultTest;
         return
       }

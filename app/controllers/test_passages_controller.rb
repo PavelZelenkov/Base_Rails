@@ -12,7 +12,10 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if @test_passage.answer_selected?(params[:answer_ids])
+    if (Time.new >= @test_passage.created_at + (@test_passage.test_time * 60))
+      flash[:alert] = t('.time_is_over', link: "#{helpers.link_to t('.result_page'), result_test_passage_path}")
+      render :show
+    elsif @test_passage.answer_selected?(params[:answer_ids])
       flash[:alert] = t('.failure')
       render :show
     else
