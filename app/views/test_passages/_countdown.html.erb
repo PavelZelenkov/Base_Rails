@@ -1,10 +1,7 @@
 <div><%= t('.test_time') %></div>
 <div class="timer">
   <div class="timer__items"
-    data-location-test="<%= test_passage_url(@test_passage.id) %>"
-    data-location-result-test="<%= test_passage_url_result(@test_passage.id) %>"
-    data-deadline-date="<%= @test_passage.deadline_date %>"
-    data-test-time="<%= @test_passage.test_time %>">
+    data-deadline_date="<%= @test_passage.deadline_date %>">
 
     <div class="timer__item timer__hours">00</div>
     <div class="timer__item timer__minutes">00</div>

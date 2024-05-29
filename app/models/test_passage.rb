@@ -39,12 +39,12 @@ class TestPassage < ApplicationRecord
     test.question_ids.index(index) + 1
   end
 
-  def deadline_date
-    created_at.strftime("%Y-%m-%dT%H:%M:%S")
-  end
-
   def test_time
     test.test_time
+  end
+
+  def deadline_date
+    created_at + (test_time * 60)
   end
 
   private

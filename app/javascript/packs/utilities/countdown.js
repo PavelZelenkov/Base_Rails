@@ -3,13 +3,9 @@ document.addEventListener('turbolinks:load', function() {
   const countdownTimerItems = document.querySelector('.timer__items');
 
   if (countdownTimerItems) {
-    deadlineDate = countdownTimerItems.getAttribute('data-deadline-date');
-    idTest = countdownTimerItems.getAttribute('data-location-test');
-    idResultTest = countdownTimerItems.getAttribute('data-location-result-test');
-    testTime = countdownTimerItems.getAttribute('data-test-time');
+    deadlineDate = countdownTimerItems.getAttribute('data-deadline_date');
 
     const deadline = new Date(deadlineDate);
-    deadline.setMinutes(deadline.getMinutes() + Number(testTime))
 
     let timerId = null;
 
@@ -19,10 +15,9 @@ document.addEventListener('turbolinks:load', function() {
 
     function countdownTimer() {
       const diff = deadline - new Date();
-      if (diff <= 0 && idTest) {
+      if (diff <= 0) {
         clearInterval(timerId);
         alert("Время прохождения теста вышло!");
-        window.location.href = idResultTest;
         return
       }
       const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
