@@ -39,6 +39,18 @@ class TestPassage < ApplicationRecord
     test.question_ids.index(index) + 1
   end
 
+  def test_time
+    test.test_time
+  end
+
+  def deadline_date
+    created_at + (test_time * 60)
+  end
+
+  def expired?
+    Time.new >= deadline_date
+  end
+
   private
 
   def before_validation_set_first_and_next_question

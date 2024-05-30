@@ -38,6 +38,8 @@ ru:
       header: "Прохождение %{title} теста"
       questions: "Номер вопроса: %{index} | Всего вопросов: %{question_size}"
       next: "Дальше"
+    countdown:
+      test_time: "Время прохождения теста в минутах"
 
     update:
       failure: "Вариант ответа не выбран!"
@@ -169,6 +171,7 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         publication: "Опубликовано"
+        test_time: "Установить время прохождения теста"
       question:  
         body: "Тело вопроса"
       answer:
