@@ -43,8 +43,6 @@ ru:
 
     update:
       failure: "Вариант ответа не выбран!"
-      time_is_over: "Время прохождения теста вышло! %{link}"
-      result_page: "Перейти на страницу результата"
 
     result:
       header: "Тест %{title} Завершен!"

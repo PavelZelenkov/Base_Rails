@@ -73,8 +73,6 @@ en:
 
     update:
       failure: "No answer option selected!"
-      time_is_over: "Test time is up! %{link}"
-      result_page: "Go to result page"
 
     result:
       header: "The %{title} Test was Completed!"
