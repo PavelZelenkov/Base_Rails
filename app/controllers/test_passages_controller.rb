@@ -21,6 +21,11 @@ class TestPassagesController < ApplicationController
       if @test_passage.expired? || @test_passage.completed?
         TestsMailer.completed_test(@test_passage).deliver_now
         redirect_to result_test_passage_path(@test_passage)
+        if @test_passage.success?
+          passed
+          # badge_user = BadgesUser.new(user_id: current_user.id, badge_ids: [])
+          # badge_user.save
+        end
       else
         render :show
       end
@@ -31,6 +36,11 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def passed
+    @test_passage.passed = true
+    @test_passage.save
   end
 
 end

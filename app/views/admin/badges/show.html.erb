@@ -1,0 +1,15 @@
+<h1><%= @badge.title %></h1>
+
+<h2><%= @badge.rule.title %>:</h2>
+<h2>
+  <% @badge.tests.each do |test| %>
+    <%= test.title %>
+  <% end %>
+</h2>
+<h2>
+  <%= @badge.img_url %>
+</h2>
+
+<p>
+  <%= link_to t('.back'), admin_badges_path %>
+</p>

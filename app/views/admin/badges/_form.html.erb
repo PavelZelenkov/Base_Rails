@@ -1,0 +1,20 @@
+<%= form_with(model:[:admin, @badge]) do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :badge_name, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :image %>
+    <%= form.text_field :img_url, id: :dabge_image %>
+  </p>
+
+  <p>
+    <%= form.label :rule_id %>
+    <%= form.collection_select :rule_id, Rule.all, :id, :title, {prompt: true}, {class: "form-select"} %>
+  </p>
+
+  <p><%= form.submit class: 'btn btn-primary' %></p>
+<% end %>
