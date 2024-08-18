@@ -8,13 +8,24 @@
 
   <p>
     <%= form.label :image %>
-    <%= form.text_field :img_url, id: :dabge_image %>
+    <%= form.text_field :img_url, id: :badge_image, class: "form-control"  %>
   </p>
 
   <p>
-    <%= form.label :rule_id %>
-    <%= form.collection_select :rule_id, Rule.all, :id, :title, {prompt: true}, {class: "form-select"} %>
+    <%= form.label :condition %>
+    <%= form.collection_select :condition, Condition.all, :title, :title, {prompt: true}, {class: "form-select"} %>
+  </p>
+
+  <p>
+    <%= form.label :condition_value %>
+    <%= form.text_field :condition_value, id: :badge_condition_value, class: "form-control" %>
+  </p>
+  
+  <p>
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :badge_description, class: "form-control" %>
   </p>
 
   <p><%= form.submit class: 'btn btn-primary' %></p>
+
 <% end %>

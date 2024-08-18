@@ -40,6 +40,7 @@ en:
       number_of_question: "Number of question"
       action: "Action"
       feedback: "Feedback"
+      badges: "Badges"
 
     test:  
       start: "Start"
@@ -62,6 +63,13 @@ en:
     create:
       failure: "An error occurred while saving gist"
       success: "Gist was successfully created! %{link}"
+
+  badges:
+    index:
+      header: "Badges"
+      back: "Back"
+      received_badges: "Received Badges"
+      all_badges: "All Badges"
 
   test_passages:
     show:
@@ -87,6 +95,26 @@ en:
       more_project_author: "More about the project and author"
   
   admin:
+    badges:
+      index:
+        header: "All Badges"
+        new_badge: "New badges"
+        back: "Back to Tests"
+        title: "Title"
+        action: "Action"
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+      new:
+        header: "New Badge"
+        back: "Back"
+      edit:
+        header: "Edit Badge"
+        back: "Back"
+      show:
+        back: "Back"
+
     gists:
       index:
         header: "All Gist"
@@ -146,6 +174,7 @@ en:
         action: "Action"
         all_gists: "All created by Gist"
         test_status: "Test status"
+        badges: "Badges"
       test:  
         show: "Show"
         edit: "Edit"
@@ -207,6 +236,12 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+      badge:
+        title: "Title"
+        image: "Image"
+        condition: "Condition"
+        condition_value: "Condition value"
+        description: "Description"
 
     application_helper:
       github_url: 

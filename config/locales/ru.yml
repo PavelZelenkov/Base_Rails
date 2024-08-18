@@ -10,6 +10,7 @@ ru:
       number_of_question: "Количество вопросов"
       action: "Действия"
       feedback: "Обратная связь"
+      badges: "Бейджи"
 
     test:  
       start: "Начать"
@@ -32,6 +33,13 @@ ru:
     create:
       failure: "Во время сохранения gist произошла ошибка"
       success: "Gist успешно сохранен! %{link}"
+
+  badges:
+    index:
+      header: "Бейджи"
+      back: "Назад"
+      received_badges: "Полученные бейджи"
+      all_badges: "Все Бейджи"
 
   test_passages:
     show:
@@ -57,6 +65,26 @@ ru:
       more_project_author: "Подробнее о проекте и авторе"
 
   admin:
+    badges:
+      index:
+        header: "Все Бейджи"
+        new_badge: "Новый бейдж"
+        back: "Назад к Тестам"
+        title: "Название"
+        action: "Действия"
+      badge:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+      new:
+        header: "Новый Бейдж"
+        back: "Назад"
+      edit:
+        header: "Редактировать Бейдж"
+        back: "Назад"
+      show:
+        back: "Назад"
+
     gists:
       index:
         header: "Все Gist"
@@ -116,6 +144,7 @@ ru:
         action: "Действия"
         all_gists: "Все созданные Gist"
         test_status: "Статус теста"
+        badges: "Бейджи"
       test:  
         show: "Показать"
         edit: "Редактировать"
@@ -177,6 +206,12 @@ ru:
       answer:
         body: "Тело ответа"
         correct: "Правильно"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        condition: "Значение"
+        condition_value: "Условие значения"
+        description: "Описание"
     
     application_helper:
       github_url: 

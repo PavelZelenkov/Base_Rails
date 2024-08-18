@@ -17,12 +17,23 @@ class Test < ApplicationRecord
   scope :easy, -> { level_selection(0..1) }
   scope :normal, -> { level_selection(2..4) }
   scope :heavy, -> { level_selection(5..Float::INFINITY) }
+  
+  scope :by_level,
+        lambda { |level|
+          where('level = ?', level)
+        }
 
   scope :category_selection, -> (category) { where(category_id: category) }
 
   scope :backend, -> { category_selection(2) }
   scope :frontend, -> { category_selection(3) }
   scope :mobile_development, -> { category_selection(4) }
+
+  scope :by_category,
+        lambda { |category|
+          joins(:category)
+            .where('categories.title = ?', category)
+        }
 
   # default_scope { order(title: :asc) } # закомментировал данный скоуп и эту сортировку добавил в метод класса
 

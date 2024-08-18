@@ -1,15 +1,15 @@
-<h1><%= @badge.title %></h1>
+<div class="row">  
+  <div class="col col-md-4">
+    <div class="card" style="width: 15rem;">
+      <img src="<%= @badge.img_url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= @badge.title %></h5>
+        <p class="card-text"><%= @badge.description %></p>
+      </div>
+    </div>
 
-<h2><%= @badge.rule.title %>:</h2>
-<h2>
-  <% @badge.tests.each do |test| %>
-    <%= test.title %>
-  <% end %>
-</h2>
-<h2>
-  <%= @badge.img_url %>
-</h2>
-
-<p>
-  <%= link_to t('.back'), admin_badges_path %>
-</p>
+    <p>
+      <%= link_to t('.back'), admin_badges_path %>
+    </p>
+  </div>
+</div>  

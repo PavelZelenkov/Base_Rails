@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_11_093947) do
+ActiveRecord::Schema.define(version: 2024_08_14_191732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,20 +26,12 @@ ActiveRecord::Schema.define(version: 2024_08_11_093947) do
 
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
-    t.string "img_url"
-    t.bigint "rule_id", null: false
+    t.string "img_url", null: false
+    t.string "condition", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["rule_id"], name: "index_badges_on_rule_id"
-  end
-
-  create_table "badges_tests", force: :cascade do |t|
-    t.bigint "test_id", null: false
-    t.bigint "badge_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_badges_tests_on_badge_id"
-    t.index ["test_id"], name: "index_badges_tests_on_test_id"
+    t.string "description", null: false
+    t.string "condition_value"
   end
 
   create_table "badges_users", force: :cascade do |t|
@@ -57,6 +49,12 @@ ActiveRecord::Schema.define(version: 2024_08_11_093947) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -85,12 +83,6 @@ ActiveRecord::Schema.define(version: 2024_08_11_093947) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
-  create_table "rules", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "test_passages", force: :cascade do |t|
     t.integer "user_id"
     t.integer "test_id"
@@ -98,7 +90,6 @@ ActiveRecord::Schema.define(version: 2024_08_11_093947) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "current_question_id"
     t.integer "correct_questions", default: 0
-    t.boolean "passed", default: false
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
   end
@@ -147,9 +138,6 @@ ActiveRecord::Schema.define(version: 2024_08_11_093947) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "badges", "rules"
-  add_foreign_key "badges_tests", "badges"
-  add_foreign_key "badges_tests", "tests"
   add_foreign_key "badges_users", "badges"
   add_foreign_key "badges_users", "users"
   add_foreign_key "categories", "users"
