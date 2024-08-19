@@ -16,10 +16,6 @@ class BadgeAwardService
 
   private
 
-  def full_tests_count(user_tests)
-    user_tests.ids.group_by(&:itself).map { |_, v| v.count }.min
-  end
-
   def badges_count(condition)
     @user.badges.where('condition = ?', condition).count
   end
@@ -30,7 +26,7 @@ class BadgeAwardService
     tests_count = Test.by_category(category).count
     user_tests = @user.tests.by_category(category)
 
-    tests_count == user_tests.uniq.count && full_tests_count(user_tests) > badges_count(:all_in_category)
+    tests_count == user_tests.uniq.count
   end
 
   def all_in_level?(level)
@@ -39,11 +35,11 @@ class BadgeAwardService
     tests_count = Test.by_level(level).count
     user_tests = @user.tests.by_level(level)
 
-    tests_count == user_tests.uniq.count && full_tests_count(user_tests) > badges_count(:all_in_level)
+    tests_count == user_tests.uniq.count
   end
 
   def first_attempt?(_param)
-    @user.tests.where('test_id = ?', @test).count == 1 if @test_passage.success?
+    TestPassage.where(user: @user, test: @test).count == 1 if @test_passage.success?
   end
 
   def first_test?(_param)
