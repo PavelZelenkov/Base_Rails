@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do # на стороне админа
+    resources :badges
+  end
+
+  resources :badges, only: %i[index] # на стороне юзера для проверки пройденных и непройденных бейджей
+
   namespace :admin do
     resources :gists, only: %i[index]
   end

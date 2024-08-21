@@ -1,0 +1,15 @@
+<div class="row">  
+  <div class="col col-md-4">
+    <div class="card" style="width: 15rem;">
+      <img src="<%= @badge.img_url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= @badge.title %></h5>
+        <p class="card-text"><%= @badge.description %></p>
+      </div>
+    </div>
+
+    <p>
+      <%= link_to t('.back'), admin_badges_path %>
+    </p>
+  </div>
+</div>  

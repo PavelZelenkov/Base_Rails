@@ -1,0 +1,13 @@
+<div class="row"> 
+  <div class="col col-md-4">
+    <h1><%= t('.header') %></h1>
+
+    <h2><%= t('.received_badges') %></h2>
+    <%= render current_user.badges %>
+    
+    <h2><%= t('.all_badges') %></h2>
+    <%= render @badges %>
+
+    <%= link_to t('.back'), tests_path %>
+  </div>
+</div>
